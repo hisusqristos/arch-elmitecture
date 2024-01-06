@@ -89,7 +89,7 @@ paiskavik model =
             , style "gap" "20px"
             ]
             [ text "‧₊˚𓐐" --"⊹˚.★"
-            , input [ placeholder "score", value (Debug.toString model), onInput Change ] []
+            , input [ placeholder "score", value (Debug.toString model), onInput Change, style "text-align" "center" ] []
             , text "𓎩₊˚⋅" --"⊹˚.★"
             ]
         , div [] [ text (toPresentable model) ]
