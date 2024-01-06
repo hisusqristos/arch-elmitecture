@@ -44,14 +44,13 @@ view model =
     div
         [ style "display" "grid"
         , style "justify-content" "center"
+        , style "justify-items" "center"
         , style "align-content" "center"
         , style "grid-auto-flow" "row"
-        , style "gap" "20px"
-        , style "align-items" "center"
-        , style "justify-items" "center"
+        , style "gap" "4%"
+        , style "height" "1300px"
         , style "background-image" "url('background.jpg')"
         , style "opacity" "0.4"
-        , style "height" "1300px" -- consider to changing to screen size
         ]
         [ allergiesText
         , paiskavik model
@@ -60,22 +59,38 @@ view model =
 
 
 allergiesText =
-    div [ style "font-size" "1300%", style "margin-bottom" "3%" ] [ text "Allergies" ]
+    div [ style "font-size" "1300%" ] [ text "アレルギー" ]
 
 
 paiskavik : Model -> Html Msg
 paiskavik model =
     div
         [ style "font-size" "325%"
-        , style "display" "flex"
-        , style "flex-direction" "column"
-        , style "padding" "2.5% 7% 2.5% 7%"
+        , style "display" "grid"
+        , style "justify-content" "center"
+        , style "justify-items" "center"
+        , style "align-content" "center"
+        , style "gap" "10px"
+        , style "padding" "2.5% 5% 2.5% 5%"
         , style "background-color" "#2E8BC0"
         , style "border" "2px solid #000000"
         , style "border-radius" "25px"
         , style "width" "30%"
         ]
-        [ input [ placeholder "score", value (Debug.toString model), onInput Change ] []
+        [ div
+            [ style "font-size" "50%"
+            , style "font-weight" "1000"
+            , style "display" "grid"
+            , style "justify-content" "center"
+            , style "justify-items" "center"
+            , style "align-content" "center"
+            , style "grid-auto-flow" "column"
+            , style "gap" "20px"
+            ]
+            [ text "‧₊˚𓐐" --"⊹˚.★"
+            , input [ placeholder "score", value (Debug.toString model), onInput Change ] []
+            , text "𓎩₊˚⋅" --"⊹˚.★"
+            ]
         , div [] [ text (toPresentable model) ]
         ]
 
@@ -83,8 +98,7 @@ paiskavik model =
 describtion : Html msg
 describtion =
     div
-        [ style "margin-top" "5%"
-        , style "font-weight" "1000"
+        [ style "font-weight" "1000"
         , style "border-style" "dashed"
         , style "padding" "3%"
         , style "background-color" "#FFFFFF"
