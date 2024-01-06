@@ -50,7 +50,8 @@ view model =
         , style "gap" "4%"
         , style "height" "1300px"
         , style "background-image" "url('background.jpg')"
-        , style "opacity" "0.4"
+        , style "box-shadow" "inset 0 0 0 1000px rgba(255, 255, 255, 0.6)"
+        , style "color" "#4D455D"
         ]
         [ allergiesText
         , paiskavik model
