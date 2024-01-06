@@ -73,8 +73,8 @@ paiskavik model =
         , style "align-content" "center"
         , style "gap" "10px"
         , style "padding" "2.5% 5% 2.5% 5%"
-        , style "background-color" "#2E8BC0"
-        , style "border" "2px solid #000000"
+        , style "background-color" "#7492be"
+        , style "border" "2px solid black"
         , style "border-radius" "25px"
         , style "width" "30%"
         ]
