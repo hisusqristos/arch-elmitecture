@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elmitecture</title>
+</head>
+
+<body>
+    <h1>Landing Page</h1>
+    <div id="links"></div>
+
+    <script>
+        // files in the dest directory
+        const destFiles = [
+            'allergies.html',
+            'pangram.html'
+        ];
+
+        // Reference to the links div
+        const linksDiv = document.getElementById('links');
+
+        destFiles.forEach(file => {
+            const link = document.createElement('a');
+            link.href = `./dest/${file}`;
+            link.textContent = file.split('.')[0]; // Extract filename without extension
+            linksDiv.appendChild(link);
+            linksDiv.appendChild(document.createElement('br'));
+        });
+    </script>
+</body>
+</html>
