@@ -13,3 +13,5 @@ for dir in */; do
     # Return to the main 'architecture' directory
     cd ../ || exit
 done
+
+./read_filenames.sh
