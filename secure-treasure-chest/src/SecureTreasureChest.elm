@@ -6,7 +6,7 @@ type Password
 
 
 type SecureTreasureChest treasure
-    = SecureTreasureChest String treasure
+    = SecureTreasureChest Password treasure
 
 
 createPassword : String -> Maybe Password
@@ -19,12 +19,12 @@ createPassword passwordCandidate =
 
 
 createTreasure : treasure -> Password -> SecureTreasureChest treasure
-createTreasure treasure (Password password) =
+createTreasure treasure password =
     SecureTreasureChest password treasure
 
 
 getTreasure : String -> SecureTreasureChest treasure -> Maybe treasure
-getTreasure passwordAttempt (SecureTreasureChest password treasure) =
+getTreasure passwordAttempt (SecureTreasureChest (Password password) treasure) =
     if passwordAttempt == password then
         Just treasure
 
