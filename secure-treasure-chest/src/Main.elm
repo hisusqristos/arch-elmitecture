@@ -1,10 +1,10 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (Html, div, text)
-import Html.Attributes exposing (style, width)
-import List
+import Html exposing (Html, div)
+import Html.Attributes exposing (style)
 import SecureTreasureChest exposing (Password(..), SecureTreasureChest(..), createTreasure)
+import TalkingBoard exposing (esoterics)
 
 
 main =
@@ -39,29 +39,7 @@ view : Model -> Html Msg
 view _ =
     div
         placeToCenter
-        [ div
-            [ style "background-color" "#E0115F"
-            , style "border" "2px solid black"
-            , style "border-radius" "25px"
-            , style "width" "55%"
-            , style "padding" "2.5% 5% 2.5% 5%"
-            , style "text-align" "center"
-            , style "line-height" "2"
-            ]
-            [ toOuija alphabet
-            , div [ style "font-size" "30px" ] [ text "⛤" ]
-            ]
-        ]
-
-
-toOuija : List String -> Html msg
-toOuija =
-    List.intersperse " " >> List.foldr (++) "" >> text
-
-
-alphabet : List String
-alphabet =
-    [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
+        esoterics
 
 
 placeToCenter : List (Html.Attribute msg)
@@ -73,4 +51,12 @@ placeToCenter =
     , style "left" "50%"
     , style "margin-right" "-50%"
     , style "transform" "translate(-50%, -50%)"
+    ]
+
+
+putInRow : List (Html.Attribute msg)
+putInRow =
+    [ style "display" "grid"
+    , style "grid-auto-flow" "column"
+    , style "gap" "4%"
     ]
